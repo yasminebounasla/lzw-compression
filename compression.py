@@ -14,7 +14,7 @@ def lzw_compress(text):
             w = wk                              # keep extending the match
         else:
             codes.append(dictionary[w])         # output the code of w
-            dictionary[wk] = len(dictionary)    # add wk with the next free code
+            dictionary[wk] = len(dictionary)    # add wk to dictionary with next free code 
             w = k                               # restart from the current character
 
     if w:                                       # end of input: output the last w

@@ -25,8 +25,10 @@ def lzw_decompress(codes):
         result.append(decoded_k)            # add decode(k) to the result
 
         new_substring = w + decoded_k[0]    # w + first character of decode(k)
-        if new_substring not in table:      # always true for a valid stream
+        if new_substring not in table:      # normal case
             table.append(new_substring)     # it gets the next free code
+        else:                               # impossible for a valid stream
+            raise ValueError(f"Invalid code sequence : {k}")
 
         w = decoded_k                       # decode(k) becomes the previous piece
 

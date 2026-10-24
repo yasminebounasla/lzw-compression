@@ -28,7 +28,7 @@ def run_compression():
 
 
 def run_decompression():
-    raw = input("Entrez les codes séparés par des espaces (ex : 0 1 3 3 2 6) : ").strip()
+    raw = input("Entrez les codes séparés par des espaces : ").strip()
 
     # Validate the input
     if not raw:
